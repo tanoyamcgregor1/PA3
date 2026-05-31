@@ -1,0 +1,28 @@
+# Tanoya McGregor
+# COP2073C Programming Assignment 3
+# Programming Assignment 3 
+employees <- data.frame(
+  EmployeeID = c(1001, 1002, 1003, 1004, 1005),
+  LastName = c("Smith", "Norris", "Johnson", "Hart", "Owens"),
+  Salary = c(45000, 51000, 36000, 39000, 42000),
+  stringsAsFactors = FALSE
+)
+summary(employees)
+exempt_values <- c("N", "Y")
+
+Exempt <- exempt_values[(employees$Salary > 50000) + 1]
+
+employees <- cbind(employees, Exempt)
+employees
+employees[1:2, ]
+str(employees)
+new_employee <- data.frame(
+  EmployeeID = 1006,
+  LastName = "Rogers",
+  Salary = 55000,
+  Exempt = "Y",
+  stringsAsFactors = FALSE
+)
+
+employees <- rbind(employees, new_employee)
+employees
